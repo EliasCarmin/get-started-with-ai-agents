@@ -16,11 +16,12 @@ export function StarterMessages({
   agentDescription,
   onPromptClick,
 }: IStarterMessageProps): ReactNode {
-  // Default starter prompts for demonstration
+  // Default starter prompts for Ingram Tours
   const defaultStarterPrompts = [
-    "How can you help me?",
-    "What are your capabilities?",
-    "Tell me about yourself",
+    "Recomiéndame un itinerario exclusivo de 5 días en Machu Picchu y Cusco",
+    "¿Cuáles son las mejores experiencias gastronómicas en Lima?",
+    "Quiero planificar un viaje de lujo al Valle Sagrado y el Lago Titicaca",
+    "¿Qué opciones premium tienen para explorar el Amazonas peruano?",
   ];
 
   return (

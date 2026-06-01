@@ -7,7 +7,6 @@ import {
   Title3,
 } from "@fluentui/react-components";
 import { ChatRegular, MoreHorizontalRegular } from "@fluentui/react-icons";
-import clsx from "clsx";
 
 import { AgentIcon } from "./AgentIcon";
 import { SettingsPanel } from "../core/SettingsPanel";
@@ -467,7 +466,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
   const menuItems = [
     {
       key: "settings",
-      children: "Settings",
+      children: "Configuración",
       onClick: () => {
         setIsSettingsPanelOpen(true);
       },
@@ -481,7 +480,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Terms of Use
+          Términos de Uso
         </a>
       ),
     },
@@ -494,16 +493,16 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Privacy
+          Privacidad
         </a>
       ),
     },
     {
       key: "feedback",
-      children: "Send Feedback",
+      children: "Enviar Comentarios",
       onClick: () => {
         // Handle send feedback click
-        alert("Thank you for your feedback!");
+        alert("¡Muchas gracias por tus comentarios!");
       },
     },
   ];
@@ -524,34 +523,19 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
       </div>
       <div className={styles.topBar}>
         <div className={styles.leftSection}>
-          {agentDetails.name ? (
-            <div className={styles.agentIconContainer}>
-              <AgentIcon
-                alt=""
-                iconClassName={styles.agentIcon}
-                iconName={agentDetails.metadata?.logo}
-              />
-              <Body1 as="h1" className={styles.agentName}>
-                {agentDetails.name}
-              </Body1>
-            </div>
-          ) : (
-            <div className={styles.agentIconContainer}>
-              <div
-                className={clsx(styles.agentIcon, {
-                  [styles.newAgent]: true,
-                })}
-              />
-              <Body1
-                as="h1"
-                className={clsx(styles.agentName, {
-                  [styles.newAgent]: true,
-                })}
-              >
-                Agent Name
-              </Body1>
-            </div>
-          )}
+          <div className={styles.agentIconContainer}>
+            <img
+              src="/static/react/ingramtours.png"
+              alt="Ingram Tours"
+              className={styles.brandLogo}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <Body1 as="h1" className={styles.agentName} style={{ display: 'none' }}>
+              {agentDetails.name}
+            </Body1>
+          </div>
         </div>
         <div className={styles.rightSection}>
           <Button
@@ -559,7 +543,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
             icon={<ChatRegular aria-hidden={true} />}
             onClick={newThread}
           >
-            New Chat
+            Nuevo Chat
           </Button>
           <MenuButton
             menuButtonText=""
@@ -576,7 +560,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
       <div className={styles.content}>
         <div className={styles.chatbot}>
           {isLoadingChatHistory ? (
-            <Spinner label={"Loading chat history..."} />
+            <Spinner label={"Cargando historial de chat..."} />
           ) : (
             <>
               {isEmpty && (
@@ -589,7 +573,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
                   <Caption1 className={styles.agentName}>
                     {agentDetails.name}
                   </Caption1>
-                  <Title3>How can I help you today?</Title3>
+                  <Title3>¿Cómo puedo ayudarte a explorar el Perú hoy?</Title3>
                 </div>
               )}
               <AgentPreviewChatBot

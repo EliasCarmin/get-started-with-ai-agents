@@ -1,0 +1,268 @@
+/* 🌎 Global Overrides for Ingram Tours - Costa, Sierra and Selva Luxury Theme */
+
+/* Custom Variables */
+:root {
+  --color-peru-crimson: #C0392B;  /* Patriotic red / Sierra flag */
+  --color-costa-gold: #D4AF37;     /* Coast sand dunes / Inca Gold */
+  --color-costa-ocean: #0E828A;    /* Pacific Ocean Teal */
+  --color-sierra-clay: #D35400;    /* Andes Clay / Terracotta orange */
+  --color-selva-emerald: #196F3D;  /* Amazon rainforest emerald green */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-text-brown: #3E2F20;     /* Rich warm brown for friendlier text */
+}
+
+/* 1. Global Font and Background Overrides */
+body, html, #react-root, .app-container {
+  font-family: var(--font-sans) !important;
+  /* Soft transition from golden sand (Costa) to rich warm clay (Sierra) */
+  background: radial-gradient(circle at 10% 20%, #FAF5EE 0%, #F5EAE0 60%, #EFE1D5 100%) !important;
+  color: var(--color-text-brown) !important;
+}
+
+* {
+  font-family: var(--font-sans) !important;
+}
+
+/* Gorgeous Serif headers for brand elegance */
+h1, .agentName {
+  font-family: var(--font-display) !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--color-peru-crimson) !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* 2. Glassmorphism Top Bar with Gold/Crimson Accent */
+.topBar, header {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 2px solid rgba(192, 57, 43, 0.15) !important; /* Soft crimson line */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* 3. Floating Modern Chat Container */
+.copilotChatContainer {
+  border-radius: 24px !important;
+  box-shadow: 0 16px 48px rgba(14, 130, 138, 0.07), 0 4px 16px rgba(0, 0, 0, 0.02) !important;
+  border: 1.5px solid rgba(14, 130, 138, 0.15) !important; /* Soft ocean teal border */
+  background-color: #FCFDFB !important;
+  overflow: hidden !important;
+  padding: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+/* 4. Complete Redesign of Chat Bubbles */
+
+/* User Message Bubble: Sierra Sunset (Crimson to Clay Terracotta) */
+div[class*="fui-UserMessageV2"], 
+.fui-UserMessageV2,
+[class*="userMessage"] {
+  background: linear-gradient(135deg, var(--color-peru-crimson) 0%, var(--color-sierra-clay) 100%) !important;
+  color: #ffffff !important;
+  border-radius: 20px 20px 4px 20px !important;
+  padding: 12px 18px !important;
+  box-shadow: 0 6px 18px rgba(192, 57, 43, 0.16) !important;
+  margin-left: auto !important;
+  max-width: 80% !important;
+  margin-bottom: 16px !important;
+  border: none !important;
+}
+
+div[class*="fui-UserMessageV2"] *, 
+.fui-UserMessageV2 *,
+[class*="userMessage"] * {
+  color: #ffffff !important;
+}
+
+/* Assistant Message Bubble: Selva Emerald (Soft white card with thin green accent) */
+div[class*="fui-CopilotMessageV2"],
+.fui-CopilotMessageV2,
+[class*="copilotChatMessage"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid rgba(25, 111, 61, 0.14) !important; /* Selva green border */
+  border-radius: 20px 20px 20px 4px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 6px 24px rgba(25, 111, 61, 0.03) !important;
+  max-width: 85% !important;
+  margin-bottom: 16px !important;
+}
+
+/* Disclaimer text: Subtle friendly note */
+div[class*="fui-CopilotMessageV2"] [class*="disclaimer"],
+[class*="disclaimer"] {
+  font-size: 0.75rem !important;
+  color: #8c9c8c !important; /* Greenish grey */
+  font-style: italic !important;
+}
+
+/* 5. Costa-inspired Luxury Rounded Chat Input Bar (Ocean Teal focus) */
+div[class*="fui-ChatInput"],
+.fui-ChatInput {
+  border-radius: 30px !important;
+  border: 2px solid rgba(14, 130, 138, 0.22) !important; /* Costa Ocean Teal */
+  box-shadow: 0 8px 32px rgba(14, 130, 138, 0.05) !important;
+  background-color: #ffffff !important;
+  padding: 6px 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+div[class*="fui-ChatInput"]:focus-within,
+.fui-ChatInput:focus-within {
+  border-color: var(--color-costa-ocean) !important;
+  box-shadow: 0 8px 32px rgba(14, 130, 138, 0.15) !important;
+}
+
+/* Style the textarea inside the input box */
+div[class*="fui-ChatInput"] textarea {
+  font-family: var(--font-sans) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: var(--color-text-brown) !important;
+}
+
+/* 6. Travel Regions Experience Starter Cards */
+div[class*="promptStarters"], 
+[class*="StarterMessages_promptStarters"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  margin: 24px auto 0 !important;
+}
+
+@media (max-width: 600px) {
+  div[class*="promptStarters"], 
+  [class*="StarterMessages_promptStarters"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+div[class*="promptStarters"] button,
+[class*="StarterMessages_promptStarters"] button {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  position: relative !important;
+}
+
+/* Card 1: Sierra / Machu Picchu (Crimson Theme) */
+div[class*="promptStarters"] button:nth-child(1),
+[class*="StarterMessages_promptStarters"] button:nth-child(1) {
+  border: 1.5px solid rgba(192, 57, 43, 0.22) !important;
+}
+div[class*="promptStarters"] button:nth-child(1):hover,
+[class*="StarterMessages_promptStarters"] button:nth-child(1):hover {
+  background: linear-gradient(135deg, #ffffff 0%, #FDEDED 100%) !important;
+  border-color: var(--color-peru-crimson) !important;
+  box-shadow: 0 10px 25px rgba(192, 57, 43, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+div[class*="promptStarters"] button:nth-child(1)::before,
+[class*="StarterMessages_promptStarters"] button:nth-child(1)::before {
+  content: '🏔️' !important;
+  font-size: 1.35rem !important;
+  margin-right: 12px !important;
+}
+
+/* Card 2: Costa Gastronomy (Teal Theme) */
+div[class*="promptStarters"] button:nth-child(2),
+[class*="StarterMessages_promptStarters"] button:nth-child(2) {
+  border: 1.5px solid rgba(14, 130, 138, 0.22) !important;
+}
+div[class*="promptStarters"] button:nth-child(2):hover,
+[class*="StarterMessages_promptStarters"] button:nth-child(2):hover {
+  background: linear-gradient(135deg, #ffffff 0%, #EEF7F8 100%) !important;
+  border-color: var(--color-costa-ocean) !important;
+  box-shadow: 0 10px 25px rgba(14, 130, 138, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+div[class*="promptStarters"] button:nth-child(2)::before,
+[class*="StarterMessages_promptStarters"] button:nth-child(2)::before {
+  content: '🍽️' !important;
+  font-size: 1.35rem !important;
+  margin-right: 12px !important;
+}
+
+/* Card 3: Sierra / Sacred Valley & Titicaca (Gold Theme) */
+div[class*="promptStarters"] button:nth-child(3),
+[class*="StarterMessages_promptStarters"] button:nth-child(3) {
+  border: 1.5px solid rgba(212, 175, 55, 0.25) !important;
+}
+div[class*="promptStarters"] button:nth-child(3):hover,
+[class*="StarterMessages_promptStarters"] button:nth-child(3):hover {
+  background: linear-gradient(135deg, #ffffff 0%, #FEF9EB 100%) !important;
+  border-color: var(--color-costa-gold) !important;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+div[class*="promptStarters"] button:nth-child(3)::before,
+[class*="StarterMessages_promptStarters"] button:nth-child(3)::before {
+  content: '⛵' !important;
+  font-size: 1.35rem !important;
+  margin-right: 12px !important;
+}
+
+/* Card 4: Selva / Amazon Rainforest (Emerald Green Theme) */
+div[class*="promptStarters"] button:nth-child(4),
+[class*="StarterMessages_promptStarters"] button:nth-child(4) {
+  border: 1.5px solid rgba(25, 111, 61, 0.22) !important;
+}
+div[class*="promptStarters"] button:nth-child(4):hover,
+[class*="StarterMessages_promptStarters"] button:nth-child(4):hover {
+  background: linear-gradient(135deg, #ffffff 0%, #EDF7F1 100%) !important;
+  border-color: var(--color-selva-emerald) !important;
+  box-shadow: 0 10px 25px rgba(25, 111, 61, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+div[class*="promptStarters"] button:nth-child(4)::before,
+[class*="StarterMessages_promptStarters"] button:nth-child(4)::before {
+  content: '🐆' !important;
+  font-size: 1.35rem !important;
+  margin-right: 12px !important;
+}
+
+div[class*="promptStarters"] button span,
+[class*="StarterMessages_promptStarters"] button span {
+  color: var(--color-text-brown) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+}
+
+/* 7. Costa Pacific Ocean Teal Filter on Bottom Waves */
+.wavesContainer {
+  opacity: 0.75 !important;
+  /* Soft ocean teal/cyan color shift */
+  filter: sepia(0.2) saturate(1.8) hue-rotate(160deg) !important;
+}
+
+/* 8. Modern Thin Scrollbars */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 130, 138, 0.25) !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-costa-ocean) !important;
+}

@@ -254,10 +254,9 @@
   background-color: var(--colorNeutralBackground2);
 }
 
-.externalLink {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  width: 100%;
+.brandLogo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 4px;
 }
