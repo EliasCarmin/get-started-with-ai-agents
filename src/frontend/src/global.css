@@ -76,17 +76,33 @@ div[class*="fui-UserMessageV2"] *,
   color: #ffffff !important;
 }
 
+div[class*="fui-UserMessageV2"] > div, 
+.fui-UserMessageV2 > div,
+[class*="userMessage"] > div,
+div[class*="fui-UserMessageV2"] [class*="fui-Card"],
+.fui-UserMessageV2 [class*="fui-Card"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 /* Assistant Message Bubble: Selva Emerald (Soft white card with thin green accent) */
 div[class*="fui-CopilotMessageV2"],
 .fui-CopilotMessageV2,
 [class*="copilotChatMessage"] {
   background-color: #ffffff !important;
+  color: var(--color-text-brown) !important;
   border: 1.5px solid rgba(25, 111, 61, 0.14) !important; /* Selva green border */
   border-radius: 20px 20px 20px 4px !important;
   padding: 16px 20px !important;
   box-shadow: 0 6px 24px rgba(25, 111, 61, 0.03) !important;
   max-width: 85% !important;
   margin-bottom: 16px !important;
+}
+
+div[class*="fui-CopilotMessageV2"] *:not([class*="disclaimer"]),
+.fui-CopilotMessageV2 *:not([class*="disclaimer"]),
+[class*="copilotChatMessage"] *:not([class*="disclaimer"]) {
+  color: var(--color-text-brown) !important;
 }
 
 /* Disclaimer text: Subtle friendly note */
