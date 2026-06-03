@@ -16,7 +16,7 @@ export function StarterMessages({
   agentDescription,
   onPromptClick,
 }: IStarterMessageProps): ReactNode {
-  // Default starter prompts for Ingram Tours
+  // Default starter prompts for Bingham Tours
   const defaultStarterPrompts = [
     "Recomiéndame un itinerario exclusivo de 5 días en Machu Picchu y Cusco",
     "¿Cuáles son las mejores experiencias gastronómicas en Lima?",

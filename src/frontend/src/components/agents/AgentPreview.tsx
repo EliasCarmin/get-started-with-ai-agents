@@ -525,8 +525,8 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
         <div className={styles.leftSection}>
           <div className={styles.agentIconContainer}>
             <img
-              src="/static/react/ingramtours.png"
-              alt="Ingram Tours"
+              src="/static/react/binghamtours.png"
+              alt="Bingham Tours"
               className={styles.brandLogo}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';

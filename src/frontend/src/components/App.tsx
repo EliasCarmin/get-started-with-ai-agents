@@ -8,7 +8,7 @@ const App: React.FC = () => {
     id: "loading",
     object: "agent",
     created_at: Date.now(),
-    name: "Ingram Tours",
+    name: "Bingham Tours",
     description: "Conectando con tu asesor experto en viajes por el Perú...",
     model: "default",
     metadata: {
@@ -47,7 +47,7 @@ const App: React.FC = () => {
             id: "fallback",
             object: "agent",
             created_at: Date.now(),
-            name: "Ingram Tours - Experto en Perú",
+            name: "Bingham Tours - Experto en Perú",
             description: "Tu asesor premium para diseñar experiencias inolvidables: tours personalizados a Machu Picchu, gastronomía en Lima, y aventuras en la Amazonía peruana.",
             model: "default",
             metadata: {
@@ -63,7 +63,7 @@ const App: React.FC = () => {
           id: "error",
           object: "agent",
           created_at: Date.now(),
-          name: "Ingram Tours - Experto en Perú",
+          name: "Bingham Tours - Experto en Perú",
           description: "Tu asesor premium para diseñar experiencias inolvidables: tours personalizados a Machu Picchu, gastronomía en Lima, y aventuras en la Amazonía peruana.",
           model: "default",
           metadata: {

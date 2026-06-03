@@ -5,7 +5,7 @@ import {
   Theme,
 } from "@fluentui/react-components";
 
-// Define our premium Peru sunset & gold brand colors for Ingram Tours
+// Define our premium Peru sunset & gold brand colors for Bingham Tours
 const brandColors: BrandVariants = {
   10: "#0D0A05",
   20: "#2B1E0C",
